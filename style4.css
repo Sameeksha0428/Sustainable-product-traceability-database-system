@@ -1,0 +1,456 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    margin-bottom: 50px;
+}
+
+/* Main container */
+.background {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* Green rectangle */
+.rect {
+    position: relative;
+    width: 100%;
+    height: 140px;
+    
+    background: linear-gradient(
+    to bottom, /* Key change - flows upward */
+    #96c3ff 0%,    /* Deepest blue (bottom) */
+    #c1dcff 30%,   /* Mid-tone */
+    #d1e3fa 70%,   /* Light blue */
+    #e3e9f1 100%   /* Pale ice (top) */
+  );
+  
+
+    background-blend-mode: overlay;
+    opacity:  0.9;
+    z-index: 1;
+}
+
+.rect2 {
+    position: absolute;
+    top: 140px; /* Starts right after .rect1 */
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #fafdff ;
+    box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.1); /* Bottom-only shadow */
+    z-index: 1; /* Ensures it stays above other content */
+  }
+  
+
+/* Logo positioning */
+.logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    z-index: 2;
+}
+
+.rect2 p {
+    display: flex;
+    justify-content: space-around; /* Even distribution */
+    align-items: center;
+    height: 100%; /* Fill parent height */
+    margin: 0;
+    padding: 0 20px; /* Side padding */
+}
+
+.rect2 span {
+    position: relative;
+    padding: 0 15px;
+    font-family: 'Georgia';
+    font-weight: 600;
+    font-size: 18px;
+    color: #011e45ec;
+    display: inline-block; /* Add this */
+    transition: all 0.3s ease; /* Add this for smooth hover */
+}
+
+.rect2 span:hover {
+    transform: translateY(-2px);
+    color: #000535;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: adds depth */
+}
+
+.rect2 span:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 15px;
+    width: calc(100% - 30px);
+    height: 2px;
+    background: #000535;
+    transform: scaleX(1);
+}
+
+.rect4 {
+    width: 100%;
+    background: linear-gradient(to top, 
+      #96c3ff 0%, 
+      #c1dcff 30%, 
+      #d1e3fa 70%, 
+      #e3e9f1 100%
+    );
+    padding: 40px 5% 20px; /* Reduced padding */
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* Reduced gap */
+  }
+  
+  /* Login Section - Larger Elements */
+  .login-section {
+    margin-left: 0%;
+    margin-right: 70px;
+    min-width: 400px; /* Added min-width */
+  }
+  
+  .login-section h3 {
+    color: #011e45;
+    margin-bottom: 15px;
+    font-size: 1.4rem; /* Slightly larger */
+    position: relative;
+    left: 16%;
+  }
+  
+  .login {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .login input {
+    width: 100%;
+    padding: 16px 20px; /* Bigger padding */
+    font-size: 1rem; /* Larger text */
+    border: 1px solid #d1e3fa;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .login input:focus {
+    border-color: #3547cd;
+    box-shadow: 0 0 0 3px rgba(53, 71, 205, 0.1);
+    outline: none;
+  }
+  
+  .login button {
+    padding: 16px 30px; /* Larger button */
+    font-size: 1rem; /* Larger text */
+    background: #3547cd;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-left: 10%;
+  }
+  
+  .login button:hover {
+    background: #1a2f8a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .login-note{
+    position: relative;
+    left: 10%;
+  }
+  
+  /* Menu Links - Compact Version */
+  .menu-links {
+    position: relative;
+    left: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Reduced gap */
+  }
+  
+  .footer-section {
+    min-width: 140px; /* Slightly smaller */
+  }
+  
+  .footer-section h3 {
+    font-size:larger; /* Smaller heading */
+    margin-bottom: 12px;
+    position: relative;
+    left: 10%
+  }
+  
+  .footer-section h3::after {
+    width: 25px; /* Smaller underline */
+    bottom: -5px;
+  }
+  
+  .footer-section li {
+    margin-bottom: 6px; /* Tighter spacing */
+  }
+  
+  .footer-section a {
+    font-size: 0.85rem; /* Smaller text */
+  }
+  
+  /* Copyright Bar - Compact */
+  .copyright-bar {
+    margin-top: 30px; /* Reduced margin */
+    padding-top: 15px;
+    font-size: 0.8rem; /* Smaller text */
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .footer-container {
+      gap: 20px;
+    }
+    
+    .login-section {
+      padding-right: 0;
+      min-width: 100%;
+    }
+    
+    .login input,
+    .login button {
+      width: 100%;
+    }
+    
+    .menu-links {
+      gap: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .rect4 {
+      padding: 30px 15px 15px;
+    }
+    
+    .footer-section {
+      min-width: 120px;
+    }
+  }
+/* Contact Container Styles */
+.contact-container {
+    width: 80%;
+    margin: 40px auto;
+    padding: 40px;
+    background: whitesmoke;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+    margin-top: 100px;
+  }
+  
+  .contact-container h1 {
+    color: #3547cd;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2.2rem;
+    position: relative;
+  }
+  
+  .contact-container h1::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #3547cd;
+    margin: 15px auto 0;
+  }
+  
+  /* Contact Form Styles */
+  .contact-form {
+    padding: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 25px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2a3a6b;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e3e9f1;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: #3547cd;
+    box-shadow: 0 0 0 3px rgba(53, 71, 205, 0.2);
+    outline: none;
+  }
+  
+  .form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+  }
+  
+  button[type="submit"] {
+    background: #3547cd;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 30px auto 0;
+    width: 200px;
+    text-align: center;
+  }
+  
+  button[type="submit"]:hover {
+    background: #1a2f8a;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(26, 47, 138, 0.3);
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .contact-container {
+      padding: 30px 20px;
+      margin: 20px;
+    }
+    
+    .contact-container h1 {
+      font-size: 1.8rem;
+    }
+    
+    button[type="submit"] {
+      width: 100%;
+    }
+  }
+
+/* Contact Info Section Styling */
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 50px;
+  }
+  
+  .info-card {
+    flex: 1;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border-left: 4px solid #3547cd;
+  }
+  
+  .info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-left-color: #ff7a45;
+  }
+  
+  .info-card h3 {
+    color: #3547cd;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .info-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: #ff7a45;
+  }
+  
+  .info-card p {
+    color: #555;
+    line-height: 1.8;
+    font-size: 1rem;
+  }
+  
+  .info-card p br {
+    display: block;
+    content: "";
+    margin-bottom: 8px;
+  }
+  
+  /* Icon Enhancement (if you want to add icons) */
+  .info-card:nth-child(1) p::before {
+    content: "📍 ";
+  }
+  
+  .info-card:nth-child(2) p::before {
+    content: "📧 ";
+  }
+  
+  /* Responsive Layout */
+  @media (max-width: 768px) {
+    .contact-info {
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .info-card {
+      padding: 25px;
+    }
+    
+    .info-card h3 {
+      font-size: 1.2rem;
+    }
+  }
+
+  /* Add to your CSS */
+.slide-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-out;
+}
+  
+.slide-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+  
+  /* For horizontal sliding */
+.slide-left {
+    transform: translateX(-50px);
+}
+  
+.slide-right {
+    transform: translateX(50px);
+}
+  
+.slide-left.active,
+.slide-right.active {
+    transform: translateX(0);
+}

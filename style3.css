@@ -1,0 +1,357 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    margin-bottom: 50px;
+}
+
+/* Main container */
+.background {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* Green rectangle */
+.rect {
+    position: relative;
+    width: 100%;
+    height: 140px;
+    
+    background: linear-gradient(
+    to bottom, /* Key change - flows upward */
+    #96c3ff 0%,    /* Deepest blue (bottom) */
+    #c1dcff 30%,   /* Mid-tone */
+    #d1e3fa 70%,   /* Light blue */
+    #e3e9f1 100%   /* Pale ice (top) */
+  );
+  
+
+    background-blend-mode: overlay;
+    opacity:  0.9;
+    z-index: 1;
+}
+
+.rect2 {
+    position: absolute;
+    top: 140px; /* Starts right after .rect1 */
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #fafdff ;
+    box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.1); /* Bottom-only shadow */
+    z-index: 1; /* Ensures it stays above other content */
+  }
+  
+
+/* Logo positioning */
+.logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    z-index: 2;
+}
+
+.rect2 p {
+    display: flex;
+    justify-content: space-around; /* Even distribution */
+    align-items: center;
+    height: 100%; /* Fill parent height */
+    margin: 0;
+    padding: 0 20px; /* Side padding */
+}
+
+.rect2 span {
+    position: relative;
+    padding: 0 15px;
+    font-family: 'Georgia', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #011e45ef;
+    display: inline-block; /* Add this */
+    transition: all 0.3s ease; /* Add this for smooth hover */
+}
+
+.rect2 span:hover {
+    transform: translateY(-2px);
+    color: #000535;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: adds depth */
+}
+
+.rect2 span:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 15px;
+    width: calc(100% - 30px);
+    height: 2px;
+    background: #000535;
+    transform: scaleX(1);
+}
+
+.rect4 {
+    width: 100%;
+    background: linear-gradient(to top, 
+      #96c3ff 0%, 
+      #c1dcff 30%, 
+      #d1e3fa 70%, 
+      #e3e9f1 100%
+    );
+    padding: 40px 5% 20px; /* Reduced padding */
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* Reduced gap */
+  }
+  
+  /* Login Section - Larger Elements */
+  .login-section {
+    margin-left: 0%;
+    margin-right: 70px;
+    min-width: 400px; /* Added min-width */
+  }
+  
+  .login-section h3 {
+    color: #011e45;
+    margin-bottom: 15px;
+    font-size: 1.4rem; /* Slightly larger */
+    position: relative;
+    left: 16%;
+  }
+  
+  .login {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .login input {
+    width: 100%;
+    padding: 16px 20px; /* Bigger padding */
+    font-size: 1rem; /* Larger text */
+    border: 1px solid #d1e3fa;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .login input:focus {
+    border-color: #3547cd;
+    box-shadow: 0 0 0 3px rgba(53, 71, 205, 0.1);
+    outline: none;
+  }
+  
+  .login button {
+    padding: 16px 30px; /* Larger button */
+    font-size: 1rem; /* Larger text */
+    background: #3547cd;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-left: 10%;
+  }
+  
+  .login button:hover {
+    background: #1a2f8a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .login-note{
+    position: relative;
+    left: 10%;
+  }
+  
+  /* Menu Links - Compact Version */
+  .menu-links {
+    position: relative;
+    left: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Reduced gap */
+  }
+  
+  .footer-section {
+    min-width: 140px; /* Slightly smaller */
+  }
+  
+  .footer-section h3 {
+    font-size:larger; /* Smaller heading */
+    margin-bottom: 12px;
+    position: relative;
+    left: 10%
+  }
+  
+  .footer-section h3::after {
+    width: 25px; /* Smaller underline */
+    bottom: -5px;
+  }
+  
+  .footer-section li {
+    margin-bottom: 6px; /* Tighter spacing */
+  }
+  
+  .footer-section a {
+    font-size: 0.85rem; /* Smaller text */
+  }
+  
+  /* Copyright Bar - Compact */
+  .copyright-bar {
+    margin-top: 30px; /* Reduced margin */
+    padding-top: 15px;
+    font-size: 0.8rem; /* Smaller text */
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .footer-container {
+      gap: 20px;
+    }
+    
+    .login-section {
+      padding-right: 0;
+      min-width: 100%;
+    }
+    
+    .login input,
+    .login button {
+      width: 100%;
+    }
+    
+    .menu-links {
+      gap: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .rect4 {
+      padding: 30px 15px 15px;
+    }
+    
+    .footer-section {
+      min-width: 120px;
+    }
+  }
+
+.mission-section{
+    position: relative;
+    width: 90%;
+    height: 270px;
+    background-color: #c1dcff97;
+    margin-left: 4%;
+    margin-right: 4%;
+    border-radius: 35px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.333);
+}
+
+.mission-text{
+    font-family: "Poppins", sans-serif;
+    margin-top: 5%;
+    margin-left: 1%;
+    margin-right: 1%;
+    padding: 1%;
+}
+
+.mission-text h2{
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight:bold;
+}
+
+.mission-text p{
+    margin-top: 2%;
+     color:rgba(0, 0, 0, 0.701);
+}
+
+.team-section{
+    position: relative;
+    top: 30px;
+    margin-left: 4%;
+    margin-right: 4%;
+    width: 90%;
+    height: 270px;
+    background-color: whitesmoke;
+    border-radius: 35px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.333);
+    margin-bottom: 100px;
+    
+}
+
+.team-section h2{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 25px;
+    bottom: 25px;
+    font-weight: bolder;
+    font-size: 26px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}
+
+.team-members {
+    display: flex; /* This arranges all .member boxes horizontally */
+    justify-content: space-around; /* Space them nicely */
+    align-items: center;
+    padding: 20px;
+}
+
+.member {
+    background-color: #f9f9f9;
+    background-color: #0005352b;
+    color:#000535;
+    width: 250px;
+    height: 100px;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px; /* Smooth corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.member h3 {
+    font-weight: bold; /* Makes the text bolder */
+    font-size: 22px;   /* Increases the size of the text */
+    margin-bottom: 10px; /* Adds some space between the h3 and p */
+}
+
+/* Add to your CSS */
+.slide-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-out;
+  }
+  
+  .slide-in.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* For horizontal sliding */
+  .slide-left {
+    transform: translateX(-50px);
+  }
+  
+  .slide-right {
+    transform: translateX(50px);
+  }
+  
+  .slide-left.active,
+  .slide-right.active {
+    transform: translateX(0);
+  }

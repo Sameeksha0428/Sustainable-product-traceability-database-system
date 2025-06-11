@@ -1,0 +1,238 @@
+/* ===== RESET & BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+  }
+  
+  /* ===== HEADER STYLES ===== */
+  .background {
+    position: relative; /* Required for absolute positioning of children */
+    width: 100%;
+    min-height: auto; /* Let content dictate height */
+    overflow: hidden; /* Prevent unwanted scrolling */
+  }
+  
+  /* Blue gradient header */
+  .rect {
+    width: 100%;
+    height: 140px;
+    background: linear-gradient(
+      to bottom,
+      #96c3ff 0%,
+      #c1dcff 30%,
+      #d1e3fa 70%,
+      #e3e9f1 100%
+    );
+    background-blend-mode: overlay;
+    opacity: 0.9;
+  }
+  
+  /* Navigation bar - CHANGED TO RELATIVE POSITIONING */
+  .rect2 {
+    position: relative; /* Changed from absolute */
+    width: 100%;
+    height: 40px;
+    background-color: #fafdff;
+    box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+  
+  /* Logo positioning */
+  .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    z-index: 2;
+  }
+  
+  /* Navigation links */
+  .rect2 p {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 0 20px;
+  }
+  
+  .rect2 span {
+    position: relative;
+    padding: 0 15px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #011e45ef;
+    display: inline-block;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .rect2 span:hover {
+    transform: translateY(-2px);
+    color: #000535;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .rect2 span:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 15px;
+    width: calc(100% - 30px);
+    height: 2px;
+    background: #000535;
+    transform: scaleX(1);
+  }
+  
+  /* ===== MAIN CONTENT STYLES ===== */
+  .sustainable-tracking {
+    padding: 40px 20px;
+    background-color:#f2f2fd;
+    margin-top: 0; /* No need for extra margin since rect2 is now relative */
+  }
+  
+  .results-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .page-header {
+    text-align: center;
+    margin-bottom: 40px;
+    color:#000535d5;
+    font-size: 2rem;
+    margin-top: 50px;
+  }
+  
+  .search-term {
+    color: #908885;
+    font-style: italic;
+    display: block;
+    margin-top: 10px;
+    font-size: 1.5rem;
+  }
+  
+  .sustainable-item {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+    display: flex;
+    transition: transform 0.3s ease;
+  }
+  
+  .sustainable-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .item-image {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  .item-details {
+    padding: 25px;
+    flex: 1;
+  }
+  
+  .item-details h3 {
+    color: #2a3a6b;
+    margin-top: 0;
+    font-size: 1.4rem;
+  }
+  
+  .craft-type {
+    color: #9a8e8a;
+    font-weight: 600;
+    margin: 5px 0 15px;
+  }
+  
+  .sustainability-metrics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .metric {
+    background: #f5f9ff;
+    padding: 12px;
+    border-radius: 8px;
+  }
+  
+  .metric .label {
+    display: block;
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  .metric .value {
+    font-weight: 600;
+    color: #3547cd;
+  }
+  
+  .view-details {
+    display: inline-block;
+    padding: 10px 25px;
+    background: #3547cd;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .view-details:hover {
+    background: #1a2f8a;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(26, 47, 138, 0.3);
+  }
+  
+  /* ===== FOOTER STYLES ===== */
+  .rect4 {
+    width: 100%;
+    background: #f0f4f9;
+    padding: 20px 0;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /* ===== RESPONSIVE STYLES ===== */
+  @media (max-width: 768px) {
+    .logo {
+      width: 250px;
+    }
+  
+    .rect2 span {
+      font-size: 16px;
+      padding: 0 10px;
+    }
+  
+    .sustainable-item {
+      flex-direction: column;
+    }
+  
+    .item-image {
+      width: 100%;
+      height: 200px;
+    }
+  
+    .sustainability-metrics {
+      grid-template-columns: 1fr;
+    }
+  }

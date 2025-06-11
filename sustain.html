@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainable Tracking | EcoKatha</title>
+    <link rel="stylesheet" href="style5.css">
+</head>
+<body>
+    <!-- Include your header -->
+    <div class="background">
+        <div class="wallpaper"></div>
+        <div class="rect">
+            <img src="img/ecoKatha-removebg-preview.png" class="logo" alt="EcoKatha Logo">
+        </div>
+        <div class="rect2">
+            <p>
+                <a href="craft..html"><span>Home</span></a>
+                <a href="stories.html"><span>CraftTales</span></a>
+                <a href="about.html"><span>AboutUs</span></a>
+                <a href="contact.html"><span>ContactUs</span></a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Sustainable Tracking Content -->
+    <main class="sustainable-tracking">
+        <div class="results-container">
+            <h1 class="page-header">
+                 Results
+            </h1>
+           
+            <!-- Example Results (replace with dynamic content later) -->
+            <div class="sustainable-item">
+                <img src="img/pottery-example.jpg" alt="Terracotta Pottery" class="item-image">
+                <div class="item-details">
+                    <h3>Terracotta Water Pots</h3>
+                    <p class="craft-type">Traditional Pottery</p>
+                   
+                    <div class="sustainability-metrics">
+                        <div class="metric">
+                            <span class="label">Materials</span>
+                            <span class="value">Natural clay, mineral paints</span>
+                        </div>
+                        <div class="metric">
+                            <span class="label">Carbon Footprint</span>
+                            <span class="value">0.8 kg CO₂</span>
+                        </div>
+                        <div class="metric">
+                            <span class="label">Water Usage</span>
+                            <span class="value">5 liters</span>
+                        </div>
+                        <div class="metric">
+                            <span class="label">Artisan</span>
+                            <span class="value">Rajesh Kumar</span>
+                        </div>
+                    </div>
+                   
+                    <a href="product-detail.html" class="view-details">View Full Details</a>
+                </div>
+            </div>
+           
+            <div class="sustainable-item">
+                <img src="img/clay-cups.jpg" alt="Clay Cups" class="item-image">
+                <div class="item-details">
+                    <h3>Handcrafted Clay Cups</h3>
+                    <p class="craft-type">Pottery</p>
+                   
+                    <div class="sustainability-metrics">
+                        <div class="metric">
+                            <span class="label">Materials</span>
+                            <span class="value">Local river clay</span>
+                        </div>
+                        <div class="metric">
+                            <span class="label">Carbon Footprint</span>
+                            <span class="value">0.5 kg CO₂</span>
+                        </div>
+                        <div class="metric">
+                            <span class="label">Water Usage</span>
+                            <span class="value">3 liters</span>
+                        </div>
+                        <div class="metric">
+                            <span class="label">Artisan</span>
+                            <span class="value">Priya Sharma</span>
+                        </div>
+                    </div>
+                   
+                    <a href="product-detail.html" class="view-details">View Full Details</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Include your footer -->
+    <div class="rect4">
+        <div class="footer-container">
+            <!-- Your existing footer content -->
+        </div>
+    </div>
+
+    <script>
+        // Simple JavaScript to extract search query from URL
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const searchQuery = urlParams.get('query');
+           
+            if (searchQuery) {
+                const searchTermElement = document.querySelector('.search-term');
+                if (searchTermElement) {
+                    searchTermElement.textContent = `"${searchQuery}"`;
+                }
+               
+                // In a real implementation, you would fetch results here
+                console.log(`Searching for: ${searchQuery}`);
+            }
+        });
+    </script>
+</body>
+</html>
